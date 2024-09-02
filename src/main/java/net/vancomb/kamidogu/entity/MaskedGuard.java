@@ -43,7 +43,6 @@ public class MaskedGuard extends AbstractHumanoidEntity {
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
     }

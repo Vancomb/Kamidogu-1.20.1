@@ -12,7 +12,6 @@ import net.vancomb.kamidogu.entity.ModEntityTypes;
 
 @Mod.EventBusSubscriber(modid = Kamidogu.MOD_ID , bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class KamidoguRenderEngine {
-
     public KamidoguRenderEngine() {
     }
 
@@ -21,13 +20,12 @@ public class KamidoguRenderEngine {
         event.registerLayerDefinition(KamidoguModelLayers.HUMANOID_ENTITY, AbstractHumanoidEntityModel::createBodyLayer);
     }
 
-
-    //To register a new mobs renderer just copy "event.registerEntityRenderer(ModEntityTypes.RANDOM_MOB.get(), AbstractKombatantEntityRenderer::new);"
-    //and replace RANDOM_MOB with your mob
-
     @SubscribeEvent
     public static void register(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntityTypes.MASKEDGUARD.get(), AbstractHumanoidEntityRenderer::new);
 
     }
 }
+
+//To register a new mobs renderer just copy "event.registerEntityRenderer(ModEntityTypes.RANDOM_MOB.get(), AbstractHumanoidEntityRenderer::new);"
+//and replace RANDOM_MOB with your mob
