@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.vancomb.kamidogu.entity.ModEntityTypes;
+import net.vancomb.kamidogu.item.CreativeModeTabs;
 import net.vancomb.kamidogu.item.ModItems;
 import org.slf4j.Logger;
 
@@ -25,9 +26,9 @@ public class Kamidogu {
     public Kamidogu() {
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModItems.register(modEventBus);
-        ModEntityTypes.register(modEventBus);
-
+        ModItems.register(modEventBus);           //Registered ModItems Class
+        ModEntityTypes.register(modEventBus);     //Registered ModEntityTypes Class
+        CreativeModeTabs.register(modEventBus);   //Registered CreateModeTabs Class
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

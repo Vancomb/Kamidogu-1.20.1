@@ -1,3 +1,7 @@
 {
-  "entity.kamidogu.maskedguard":"Masked Guard"
+  "entity.kamidogu.maskedguard":"Masked Guard",
+
+  "creativetab.kamidogu_tab":"Kamidogu",
+
+  "item.kamidogu.kamidogu_icon": "Kamidogu Icon"
 }
